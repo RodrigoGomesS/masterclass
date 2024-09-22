@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  nestjs:
+    build: .
+    container_name: nestjs_dev
+    volumes:
+      - .:/usr/src/app # Sincroniza o diretório atual (host) com o container
+    ports:
+      - '3000:3000'    # Mapeia a porta 3000 do container para a 3000 do host
+    stdin_open: true    # Mantém o terminal aberto
+    tty: true           # Habilita modo interativo TTY
